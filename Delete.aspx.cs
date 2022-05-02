@@ -13,5 +13,32 @@ namespace UniversityManagement
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string universidad = DropDownList1.Text;
+            string nombre = TextBox1.Text;
+
+            try
+            {
+                Universidad uSeleccionada = _Default.universidades.Find(u => u.Nombre.Equals(universidad));
+                if (uSeleccionada.Alumnos.Find(a => a.Nombre.Equals(nombre)).Nombre != null)
+                {
+                    Response.Write("<script>alert('Alumno encontrado')</script>");
+                }
+                Button1.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('No se ha podido encontrar al alumno')</script>");
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+            _Default create = new _Default();
+            create.GuardarDatos();
+        }
     }
 }

@@ -17,12 +17,12 @@ namespace UniversityManagement
         protected void Button2_Click(object sender, EventArgs e)
         {
             string universidad = DropDownList1.Text;
-            string nombre = TextBox1.Text;
+            string carne = TextBox1.Text;
 
             try
             {
                 Universidad uSeleccionada = _Default.universidades.Find(u => u.Nombre.Equals(universidad));
-                if(uSeleccionada.Alumnos.Find(a => a.Nombre.Equals(nombre)).Nombre != null)
+                if(uSeleccionada.Alumnos.Find(a => a.Carne.Equals(carne)) != null)
                 {
                     Response.Write("<script>alert('Alumno encontrado')</script>");
                 }
@@ -38,11 +38,11 @@ namespace UniversityManagement
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string nombre = TextBox1.Text;
+            string carnet = TextBox1.Text;
             string universidad = DropDownList1.Text;
             string nuevoNombre = TextBox2.Text;
             Universidad uSeleccionada = _Default.universidades.Find(u => u.Nombre.Equals(universidad));
-            uSeleccionada.Alumnos.Find(a => a.Nombre.Equals(nombre)).Nombre = nuevoNombre;
+            uSeleccionada.Alumnos.Find(a => a.Carne.Equals(carnet)).Nombre = nuevoNombre;
             _Default create = new _Default();
             create.GuardarDatos();
         }
