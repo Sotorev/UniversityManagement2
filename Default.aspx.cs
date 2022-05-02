@@ -71,10 +71,9 @@ namespace UniversityManagement
             }
             catch (Exception ex)
             {
+                alumnos = new List<Alumno>();
                 GridView2.DataSource = null;
                 GridView2.DataBind();
-                if (IsPostBack)
-                    Response.Write("<script>alert('Esta universidad no tiene alumnos')</script>");
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
