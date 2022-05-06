@@ -11,6 +11,8 @@ namespace UniversityManagement
 {
     public partial class _Default : Page
     {
+        public static List<PersonalAdministrativo> personal = new List<PersonalAdministrativo>();
+        public static List<PersonalAdministrativo> personalTemp = new List<PersonalAdministrativo>();
         public static List<Alumno> alumnos = new List<Alumno>();
         public static List<Alumno> alumnosTemp;
         public static List<Universidad> universidades = new List<Universidad>();
@@ -18,9 +20,9 @@ namespace UniversityManagement
         protected void Page_Load(object sender, EventArgs e)
         {
             LeerDatos();
-            ActualizarAlumnosActuales();
+            ActualizarPersonal();
         }
-        void LeerDatos()
+        public void LeerDatos()
         {
             string archivo = Server.MapPath("Universidades.json");
 
@@ -52,57 +54,42 @@ namespace UniversityManagement
             TextBox1.Text = null;
             TextBox2.Text = null;
             TextBox3.Text = null;
-            TextBox4.Text = null;
-            TextBox5.Text = null;
         }
         
-        void ActualizarAlumnosActuales()
+        void ActualizarPersonal()
         {
 
             string universidadSeleccionada = DropDownList1.Text;
             try
             {
-                List<Alumno> source = universidades.Find(u =>
-                            u.Nombre.Equals(universidadSeleccionada)).Alumnos;
-                alumnos = source;
+                List<PersonalAdministrativo> source = universidades.Find(u =>
+                            u.Nombre.Equals(universidadSeleccionada)).Personal;
+                if(source != null)
+                    personal = source;
                 GridView2.DataSource = source;
                 GridView2.DataBind();
 
             }
             catch (Exception ex)
             {
-                alumnos = new List<Alumno>();
+                personal = new List<PersonalAdministrativo>();
                 GridView2.DataSource = null;
                 GridView2.DataBind();
             }
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Nota nota = new Nota()
-            {
-                Curso = TextBox5.Text,
-                Punteo = Convert.ToInt32(TextBox4.Text)
-            };
-            notasTemp.Add(nota);
-            GridView1.DataSource = notasTemp;
-            GridView1.DataBind();
-        }
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Alumno alumno = new Alumno()
+            PersonalAdministrativo p = new PersonalAdministrativo()
             {
-                Carne = TextBox1.Text,
+                NoIggs = TextBox1.Text,
                 Nombre = TextBox2.Text,
-                Apellido = TextBox3.Text,
-                Notas = notasTemp.ToArray().ToList()
+                Apellido = TextBox3.Text
             };
-            alumnos.Add(alumno);
-            alumnosTemp = alumnos;
-            GridView2.DataSource = alumnos;
+            personal.Add(p);
+            personalTemp = personal;
+            GridView2.DataSource = personal;
             GridView2.DataBind();
             notasTemp.Clear();
-            GridView1.DataSource = notasTemp;
-            GridView1.DataBind();
             LimpiarCajas();
         }
 
@@ -113,6 +100,7 @@ namespace UniversityManagement
             {
                 Universidad u = new Universidad()
                 {
+                    Personal = personalTemp,
                     Alumnos = alumnosTemp,
                     Nombre = DropDownList1.Text
                 };
@@ -121,11 +109,11 @@ namespace UniversityManagement
             else
             {
                 universidades.Find(uni => uni.Nombre.Equals(DropDownList1.Text)).
-                    Alumnos = alumnosTemp;
+                    Personal = personalTemp;
             }
             GuardarDatos();
             alumnos.Clear();
-            GridView2.DataSource = alumnosTemp;
+            GridView2.DataSource = personalTemp;
             GridView2.DataBind();
         }
 

@@ -1,1 +1,99 @@
-[{"Nombre":"Mesoamericana","Alumnos":[{"Carne":"1","Notas":[{"Curso":"A1","Punteo":1}],"Nombre":"Manuel","Apellido":"Soto"},{"Carne":"2","Notas":[{"Curso":"A1","Punteo":1}],"Nombre":"Rene","Apellido":"Bac"},{"Carne":"3","Notas":[{"Curso":"A1","Punteo":1}],"Nombre":"Jako","Apellido":"Nunez"}]},{"Nombre":"Landivar","Alumnos":[{"Carne":"1","Notas":[{"Curso":"B1","Punteo":1}],"Nombre":"Juan","Apellido":"Hernandez"}]}]
+[
+  {
+    "Nombre": "Mesoamericana",
+    "Alumnos": [
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "Carne": "1",
+        "Notas": [
+          {
+            "Curso": "A1",
+            "Punteo": 1
+          }
+        ],
+        "Nombre": "Manuel",
+        "Apellido": "Soto",
+        "Edad": 2021
+      },
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "Carne": "2",
+        "Notas": [
+          {
+            "Curso": "A1",
+            "Punteo": 1
+          }
+        ],
+        "Nombre": "Rene",
+        "Apellido": "Bac",
+        "Edad": 2021
+      },
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "Carne": "3",
+        "Notas": [
+          {
+            "Curso": "A1",
+            "Punteo": 1
+          }
+        ],
+        "Nombre": "Jako",
+        "Apellido": "Nunez",
+        "Edad": 2021
+      }
+    ],
+    "Personal": [
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "NoIggs": "1",
+        "InicioDeLabores": "0001-01-01T00:00:00",
+        "FinDeLabores": "0001-01-01T00:00:00",
+        "Profesion": null,
+        "Nombre": "n1",
+        "Apellido": "a1",
+        
+        "Edad": 2021
+      },
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "NoIggs": "2",
+        "InicioDeLabores": "0001-01-01T00:00:00",
+        "FinDeLabores": "0001-01-01T00:00:00",
+        "Profesion": null,
+        "Nombre": "n2",
+        "Apellido": "a2",
+        "Edad": 2021
+      }
+    ],
+    "Profesores": [
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "Id": "2",
+        "Titulo": "Ingeniero",
+        "Nombre": "p1",
+        "Apellido": "a1",
+        "Edad": 2021
+      }
+    ]
+  },
+  {
+    "Nombre": "Landivar",
+    "Alumnos": [
+      {
+        "birthDay": "0001-01-01T00:00:00",
+        "Carne": "1",
+        "Notas": [
+          {
+            "Curso": "B1",
+            "Punteo": 1
+          }
+        ],
+        "Nombre": "Emilio",
+        "Apellido": "Hernandez",
+        "Edad": 2021
+      }
+    ],
+    "Personal": null,
+    "Profesores": null
+  }
+]

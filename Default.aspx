@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>Ingreso de notas</h1>
+        <h1>Ingreso de personal</h1>
         <span style="font-size: large">Universidad</span>
         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">
             <asp:ListItem Value="Mesoamericana">Mesoamericana</asp:ListItem>
@@ -16,7 +16,7 @@
         </asp:GridView>
         <br />
         <div>
-            Carne&nbsp;&nbsp;&nbsp;
+            Numero de IGGS&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox1" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
             <br />
             <br />
@@ -29,25 +29,11 @@
         </div>
         <br />
         <br />
-        <div style="background-color:darkgray; border-radius:25px; padding: 10px">
-            Notas
-            <asp:TextBox ID="TextBox4" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
-            <br />
-            <br />
-            Nombre del curso<asp:TextBox ID="TextBox5" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Ingresar nota" />
-        </div>
-        <br />
-        <asp:GridView ID="GridView1" runat="server">
-        </asp:GridView>
-        <br />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Ingresar alumno" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Ingresar personal" />
 
         <br />
         <br />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Registrar" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Ingresar universidad" />
 
     </div>
 

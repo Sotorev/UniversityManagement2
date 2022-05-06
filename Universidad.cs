@@ -9,5 +9,7 @@ namespace UniversityManagement
     {
         public string Nombre { get; set; }
         public List<Alumno> Alumnos { get; set; }
+        public List<PersonalAdministrativo> Personal { get; set; }
+        public List<Profesor> Profesores { get; set; }
     }
 }
